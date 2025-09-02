@@ -10,7 +10,7 @@
 	 		"for ${1:i}  in range(${2:5}):",
 	 		"    ${0:# TODO: coś zrób}"
 	 	],
-	 	"description": "skłądnia pętli for wstawia z opisem"
+	 	"description": "składnia pętli for wstawia z opisem"
 	 },
 	 
 	"funkcja":{
@@ -162,7 +162,7 @@
 	"raise/Reczne/Rzucenie/Wyjątku": {
 	  "prefix": "raise",
 	  "body": [
-		"raise Expection(${0:#treść komunikat błędu})",
+		"raise Exception(${0:#treść komunikat błędu})",
 		
 	  ],
 	  "description": "Reczne rzucenie wyjątku"
@@ -170,7 +170,7 @@
 	"assert/szybka/Walidacja/Warunku": {
 	  "prefix": "assert",
 	  "body": [
-		"asert, ${1:#warunek()}",
+		"assert, ${1:#warunek()}",
 	  ],
 	  "description": "Szybka walidacja warunku"
 	},
@@ -182,37 +182,37 @@
 		"except(TypeError,ValueError)as e:",
 		"   ${0:#obsugał}"
 	  ],
-	  "description": "Składania excpet obsługującego wiele typów błędów"
+	  "description": "Składnia except obsługującego wiele typów błędów"
 	  //Operacje na plikach
 	},
 	"Otwieranie/pliku/do/odczytu": {
-	  "prefix": "witchopen",
+	  "prefix": "withopen",
 	  "body": [
-		"witch open (${1:#'nazwa_pliku.txt','r'}) as f:",
+		"with open (${1:#'nazwa_pliku.txt','r'}) as f:",
 		"    ${0:#Todo dane = f.read()}"
 	  ],
 	  "description": "Otwieranie pliku do odczytu"
 	},
 	"Otwieranie/pliku/do/zapisu": {
-	  "prefix": "witchopenw",
+	  "prefix": "withopenw",
 	  "body": [
-		"witch open (${1:#'nazwa_pliku.txt','w'}) as f:",
+		"with open (${1:#'nazwa_pliku.txt','w'}) as f:",
 		"   ${0:#Todo f.write('tekst')}"
 	  ],
 	  "description": "Otwieranie pliku do zapisu(nadpisuje)"
 	},
 	"Otwieranie/pliku/do/dopisania": {
-	  "prefix": "witchopena",
+	  "prefix": "withopena",
 	  "body": [
-		"witch open (${1:#'nazwa_pliku.txt','a'}) as f:",
+		"with open (${1:#'nazwa_pliku.txt','a'}) as f:",
 		"${0:#Todo  f.write('dopisany tekst')}"
 	  ],
 	  "description": "Otwieranie pliku do dopisania"
 	},
 	"Otczyt/linia/po/lina": {
-	  "prefix": "witchopenfor",
+	  "prefix": "withopenfor",
 	  "body": [
-		"witch open (${1:#'nazwa_pliku.txt','r'}) as f:",
+		"with open (${1:#'nazwa_pliku.txt','r'}) as f:",
 		"   ${1:#for linia in f:}",
 		"       ${0:#print (linia)}"
 	  ],
