@@ -1,0 +1,242 @@
+//args argumenty	
+//Najważniejsze składniki snipetu-> body ciało czyli co robi, desription opis, prefix nazwa
+//${1:nazwa}Placeholder z domyślną wartością – możesz ją zmienić, ale daje Ci punkt startowy
+//$1, $2, $3 Tab stop – miejsce, do którego przeskakuje kursor po wstawieniu snippetu
+//$0	Ostateczna pozycja kursora – gdzie trafisz na końcu edycji snippetu
+{
+	 "Pętla/For": {                                                   
+		"prefix": "pętlafor",
+	 	"body": [
+	 		"for ${1:i}  in range(${2:5}):",
+	 		"    ${0:# TODO: coś zrób}"
+	 	],
+	 	"description": "skłądnia pętli for wstawia z opisem"
+	 },
+	 
+	"funkcja":{
+		"prefix": "funkcja",
+		"body": [
+			"def ${1:nazwa_funkcji}(${2:arg1},${3:arg2})",
+			"   ${0:# Todo: return}"
+		],
+		"description": "Wzór funkcji"	
+	 },
+	 "Klasa":{
+		"prefix": "Class",
+		"body": ["class${1:NazwaKlasy}:",
+		"def __init__(self,${2:argument1},${3:argument2}):",
+			"self.${2:argument1} = ${2:argument1}",
+			 "self.${3:argument2} = ${3:argument2}",
+		 "def ${4:metoda}(self):",
+		 	"${0:#ciało metody}",
+			 "return coś"
+
+	 ],
+	 "description": "Składnia klasy"       
+	 },
+	 "Pętla/while":{
+		"prefix": "while",
+		"body":[ "while True",
+				 "    ${0:# Todo: zrob coś}"
+	],
+	"description":"Składnia pętli while nie skończonej"
+	 },
+	 "Pętla/while/Z/warunkiem":{
+		"prefix": "while not",
+		"body":[ "while not ${1:jakiś_warunek():}",
+				 "   ${0:# Todo np: jakiś_warunek = cokolwiek()}"
+	],
+	"description":"Składnia pętli while not z warunkiem"
+	 },
+	  "Pętla/while/Z/Licznikiem":{
+		"prefix": "while licznik",
+		"body":[ "${1:i} = ${2:0}",
+    		"while ${1:i} < ${3:5}:",
+    		"    ${4:print(${1:i})}",
+    		"    ${1:i} += 1",
+    		"${0}"
+	],
+	"description":"Składnia pętli while z licznikiem"
+	 },
+	 "Pętla/while/z/Przerwaniem":{
+		"prefix": "while break",
+		"body":[   "while True:",
+   				   "    ${1:warunek} = ${2:input(\"Podaj coś: \")}",
+   				   "    if ${1:warunek} == ${3:\"exit\"}:",
+   					 "        break",
+   				   "    ${0:# TODO: zrób coś z warunkiem}"
+  ],
+	 "description": "Pętla while z przerwaniem"
+	 },
+	 "ifpodstawowy": {
+	 "prefix": "if",
+  	 "body": [
+		"if ${1:warunek}:",
+		"   ${0:#Todo kod do wykonania}"
+  ],
+  "description": "Podstawowy if"
+},
+	"ifzelse": {
+	  "prefix": "ifelse",
+	  "body": [
+		"if ${1:warunek}:",
+		"   ${2:#Todo kod jeśli warunek prawdziwy}",
+		"else:",
+		"   ${0:#Todo kod jeśli warunek jest fałszywy}"
+	  ],
+	  "description": "Opis"
+	},
+	"if/else/elif": {
+	  "prefix": "ifelseelif",
+	  "body": [
+		"if ${1:warunek}:",
+		"${2:#kod jeśli warunek}",
+		"elif${3:#warunek 2}:",
+		"${4:#kod jeśli warunek2}",
+		"else:",
+		"#kod jeśli żaden nie spełniony"
+	  ],
+	  "description": "if z elif i z else"
+	},
+	"if/zagnieżdrzony": {
+	  "prefix": "ifzif",
+	  "body": [
+		"if ${1:warunek}:",
+		"   if ${2:warunek}:",
+		"    ${0:#Kod jeśli oba warunki}"
+	  ],
+	  "description": "Zagnieżdrzony if"
+	},
+	"jedno/linikowy/warunek": {
+	  "prefix": "krótkiif",
+	  "body": [
+		"${1:warunek} if warunek else ${0:przeciwny warunek}",
+		
+	  ],
+	  "description": "jedno linijkowy if z else"
+	},
+	"Łączeniewarunków": {
+	  "prefix": "ŁączenieWarunków",
+	  "body": [
+		"if ${1:warunek logiczny} and ${2:warunek logiczny inny}",
+		"if ${2:warunek logiczny 2} or ${3:warunek inny kolejny}",
+		"if not ${0: np is_ready}"
+	  ],
+	  "description": "łączenie warunków "
+	},
+	"Porównanialogiczne": {
+  	"prefix": "porwónajlogicznie",
+  	"body": [
+	"if a == b",
+	"if a != b",
+	"if a > b",
+	"if a < b ",
+	"if a >= b",
+	"if a <= b ",
+  	],
+  	"description": "Porównania logiczne xd"
+	//obsługa błędów i walidacji xdd
+	},
+	"try/except/Klasyczna/Obsługa/Błędów": {
+  	"prefix": "try/except",
+  	"body": [
+	 "try:",
+	"   ${1:#kod}",
+	"except Expection as e:",
+	"    ${0:#kod obsługa błędu}"
+  ],
+  "description": "Klasyczna obsługa błędów"
+},
+  "try/except/finally/ObsługaBłędów/Z/Blokiem/który/zawsze/sie/Wykona": {
+	  "prefix": "try/except/finally",
+	  "body": [
+		"try:",
+		"   ${1:#kod}",
+		"except:",
+		"   ${2:# kod obsługa błędu}",
+		"finally:",
+		"   ${0:#Kod który zawsze się wykona}",
+	  ],
+	  "description": "Obsługa błędów z blokiem finaly który zawsze się wykona"
+	},
+	"raise/Reczne/Rzucenie/Wyjątku": {
+	  "prefix": "raise",
+	  "body": [
+		"raise Expection(${0:#treść komunikat błędu})",
+		
+	  ],
+	  "description": "Reczne rzucenie wyjątku"
+	},
+	"assert/szybka/Walidacja/Warunku": {
+	  "prefix": "assert",
+	  "body": [
+		"asert, ${1:#warunek()}",
+	  ],
+	  "description": "Szybka walidacja warunku"
+	},
+	"except/z/wieloma/typami/błędu": {
+	  "prefix": "exceptzwielomatypamibłędu",
+	  "body": [
+		"try:",
+		"   ${1:#Todo kod}",
+		"except(TypeError,ValueError)as e:",
+		"   ${0:#obsugał}"
+	  ],
+	  "description": "Składania excpet obsługującego wiele typów błędów"
+	  //Operacje na plikach
+	},
+	"Otwieranie/pliku/do/odczytu": {
+	  "prefix": "witchopen",
+	  "body": [
+		"witch open (${1:#'nazwa_pliku.txt','r'}) as f:",
+		"    ${0:#Todo dane = f.read()}"
+	  ],
+	  "description": "Otwieranie pliku do odczytu"
+	},
+	"Otwieranie/pliku/do/zapisu": {
+	  "prefix": "witchopenw",
+	  "body": [
+		"witch open (${1:#'nazwa_pliku.txt','w'}) as f:",
+		"   ${0:#Todo f.write('tekst')}"
+	  ],
+	  "description": "Otwieranie pliku do zapisu(nadpisuje)"
+	},
+	"Otwieranie/pliku/do/dopisania": {
+	  "prefix": "witchopena",
+	  "body": [
+		"witch open (${1:#'nazwa_pliku.txt','a'}) as f:",
+		"${0:#Todo  f.write('dopisany tekst')}"
+	  ],
+	  "description": "Otwieranie pliku do dopisania"
+	},
+	"Otczyt/linia/po/lina": {
+	  "prefix": "witchopenfor",
+	  "body": [
+		"witch open (${1:#'nazwa_pliku.txt','r'}) as f:",
+		"   ${1:#for linia in f:}",
+		"       ${0:#print (linia)}"
+	  ],
+	  "description": "Wzrór odczytu linia po lini"
+	},
+	"Sprawdzenie/czy/plik/istnieje": {
+	  "prefix": "sprawdzczyplikistnieje",
+	  "body": [
+		"import os",
+		"if os.path.exists(${1:#'nazwa_pliku.txt'}):",
+		"    ${0:#Coś zrób}"
+	  ],
+	  "description": "Składnia sprawdzenia czy plik istnieje"
+	},
+	"Usunięcie/pliku": {
+	  "prefix": "usunięciepliku",
+	  "body": [
+		"import os",
+		"os.remove(${1:#'nazwa_pliku.txt'})"
+	  ],
+	  "description": "Usunięcie pliku "
+	}
+}
+
+
+
+
