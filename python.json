@@ -234,8 +234,66 @@
 		"os.remove(${1:#'nazwa_pliku.txt'})"
 	  ],
 	  "description": "Usunięcie pliku "
+	},
+	"lista": {
+	  "prefix": "list",
+	  "body": [
+		"#lista uporządkowana: list = [1,2,3]",
+		"# dodanie elementu na koniec: list.append(4)",
+		"#usunięcie elementu: list.remove(2)",
+		"#usunięcie ostatniego elementu: list.pop() ",
+		"#sortowanie listy rosnąco: list.sort()",
+		"# odwrócenie kolejności elementów: list.reverse()",
+	  ],
+	  "description": "Opis"
+	},
+	"słownik": {
+	  "prefix": "dict",
+	  "body": [
+		"#Słownik nie uporządkowany kolekcja par: dict = {'klucz':'wartość'}",
+		"#dodanie nowej pary: dict['nowy'] = 'dodany' ",
+		"#Pobieranie wartości z klucza: dict = słownik.get('klucz')",
+		"#Usunięcie pary z kluczem: del dict['klucz']",
+	  ],
+	  "description": "Opis"
+	},
+	"Zbiór": {
+	  "prefix": "zbiór",
+	  "body": [
+		"#zbiór to nieuporządkowana kolekcja unikalnych elmentów: zbiór = {1,2,3}",
+		"#dodanie elementu: zbiór.add(4)",
+		"#Usunięcie elementu: zbiór.remove(2)",
+		"#Dodanie wielu elementów naraz: zbiór.update({5,6})",
+	  ],
+	  "description": "Zbiór i operacje na zbiorach"
+	},
+	"Krotka/tuple": {
+	  "prefix": "krotkatuple",
+	  "body": [
+		"#krotka = (1,2,3)",
+		"#wartość = krotka[0]"
+	  ],
+	  "description": "Krotka inaczej zwana tuple"
+	},
+	"List/comprehension": {
+	  "prefix": "listcomprehension",
+	  "body": [
+		"Skrótowa forma tworzenia listy na podstawie innej listy często z warunkiem",
+		"nowa_lista = [${1:#np. x for x in lista if x >0}]",
+	  ],
+	  "description": "List comprehension"
+	},
+	"Iteracja/po/słowniku": {
+	  "prefix": "iteracjaposłowniku",
+	  "body": [
+		"for klucz,wartość in słownik.items()",
+		"   ${0:#print(klucz,wartość)}"
+	  ],
+	  "description": "Iteracja po słowniku"
 	}
 }
+
+
 
 
 
