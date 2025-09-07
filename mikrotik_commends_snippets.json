@@ -1,0 +1,12 @@
+{
+"Dodaj IP do interfejsu": {
+	  "prefix": "adresip",
+	  "body": [
+		"/ip address add address=192.168.88.1/24 interface=ether1",
+	  ],
+	  "description": "Dodaje Adres Ip do interfejsu"
+	},
+
+
+  
+}
