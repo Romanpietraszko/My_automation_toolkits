@@ -429,6 +429,59 @@
 	"       data = response.json()",
   ],
   "description": "Umożliwia pobieranie danych w sposób asynchroniczny-przydatne w fast api"
+	//AI-ML
+"NumPy operacje na macierzach": {
+  "prefix": "Podstawowy_typ_danych_w_ML_do_matmy",
+  "body": [
+	"import numpy as np",
+	"macierz = np.array([[1,2],[3,4]])"
+  ],
+  "description": "Tworzy dwumywiarową macierz(array),podstawowy typ danych w ML do obliczeń matmatycznych"
+},
+"Pandas manipulacja danymi": {
+  "prefix": "Wczytywanie_danych_z_pliku_CSV_i_modifikowanie_kolumny",
+  "body": [
+	"import pandas as pd",
+	"df = pd.read_csv('plik.csv')",
+	"df['kolumna'] = df['kolumna'].apply(lambda x: x *2)"
+  ],
+  "description": "Wczytuje dane z pliku CSV i modyfikuje kolumnę — Pandas to must-have do pracy z danymi tabelarycznymi."
+},
+"Scikit-learn klasyczne ML": {
+  "prefix": "Tworzenie_modelu_regresji_logistycznej_trenowanie_i_przewidywanie_wyników_klasyczny_ML_workflow",
+  "body": [
+	"form sklearn.linear_model import LogisticRegresion",
+	"model = LogisticRegresion()",
+	"model.fit(X_train, y_train)",
+	"pred = model.predict(X_test)"
+  ],
+  "description": "Tworzy model regresji logistycznej, trenuje go na danych i przewiduje wyniki — klasyczny ML workflow."
+},
+"TensorFlow deep learning": {
+  "prefix": "definiuj_i_trenuj_sieć_neuronową_w_TensorFlow",
+  "body": [
+	"import tensorflow as tf",
+	"model = tf.keras.Sequential([])",
+	"model.compile(optimizer = 'adam',loss = 'mse')",
+	"model.fit(X,y epochs = 10)"
+  ],
+  "description": "Definiuje i trenuje sieć neuronową w TensorFlow — używane w projektach deep learningowych."
+},
+//CLI
+"Tworzenie interfejsu CLI z opcjami nazwa i debug": {
+  "prefix": "Interfejs_CLI_z_opcjami_debug_nazwa_automatycznehelp",
+  "body": [
+	//argparse – parser argumentów z linii poleceń
+	"import argparse",
+	"",
+    "parser = arparse.ArgumentyParser(description = 'Opis Programu')",
+    "parser.add_argument('--nazwa',type = str, help = 'podaj nazwę])",
+	"parser.add_argument('--debug',action = 'store_true', help = 'tryb debugowania')",
+	"args = parser.parse_args()",
+    "print(args.nazwa)",
+  ],
+  "description": "worzy interfejs CLI z opcjami --nazwa i --debug. Automatycznie generuje help."
+},
 },
 
 
